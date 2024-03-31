@@ -17,7 +17,6 @@ async def start_robot(start_num: int):
         'number_start':start_num,
         'time': None,
     }
-    print(message)
     _ = await insert_start_process([message])
     return message
 
@@ -56,5 +55,4 @@ async def shutdown_event():
             'date_end': datetime.datetime.now(),
         }
      for item in items]
-    print('ITEMS',items)
     await insert_stop_process(items)
